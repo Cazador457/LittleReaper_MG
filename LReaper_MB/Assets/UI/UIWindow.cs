@@ -1,17 +1,29 @@
-using UnityEngine;
 using DG.Tweening;
+using NaughtyAttributes;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class UIWindow : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private string windowsID;
-    [SerializeField] private Canvas windowsCanvas;
-    [SerializeField] private CanvasGroup windowsCanvasGroup;
+    [SerializeField] private string windowID;
+    [SerializeField] private Canvas windowCanvas;
+    [SerializeField] private CanvasGroup windowCanvasGroup;
 
     [Header("Options")]
     [SerializeField] private bool hideOnStart = true;
-    
-    public string WindowID => windowsID;
+    [SerializeField] private float animationTime = 0.5f;
+    // Animation easing types from DOTween 
+    [SerializeField] private Ease easeShow = Ease.InBack;
+    [SerializeField] private Ease easeHide = Ease.OutBack;
+
+    public UnityEvent OnStartShowingUI { get; private set; } = new UnityEvent();
+    public UnityEvent OnFinishedShowingUI { get; private set; } = new UnityEvent();
+    public UnityEvent OnStartHidingUI { get; private set; } = new UnityEvent();
+    public UnityEvent OnFinishedHidingUI { get; private set; } = new UnityEvent();
+    public bool IsShowing { get; private set; } = false;
+    public string WindowID => windowID;
     void Start()
     {
         Initialize();
@@ -26,12 +38,11 @@ public class UIWindow : MonoBehaviour
         //windowsCanvas.gameObject.SetActive(true);
         if (instant)
         {
-            windowsCanvasGroup.transform.DOScale(Vector3.one, 0.5f);
-
+            windowCanvasGroup.transform.DOScale(Vector3.one, 0.5f);
         }
         else
         {
-            windowsCanvasGroup.transform.DOScale(Vector3.one, 0.5f);
+            windowCanvasGroup.transform.DOScale(Vector3.one, 0.5f);
         }
     }
 
@@ -40,17 +51,11 @@ public class UIWindow : MonoBehaviour
         //windowsCanvas.gameObject.SetActive(false);
         if (instant)
         {
-            windowsCanvasGroup.transform.DOScale(Vector3.zero, 0.5f);
-
+            windowCanvasGroup.transform.DOScale(Vector3.zero, 0.5f);
         }
         else
         {
-            windowsCanvasGroup.transform.DOScale(Vector3.zero, 0.5f);
+            windowCanvasGroup.transform.DOScale(Vector3.zero, 0.5f);
         }
-    }
-
-    void Update()
-    {
-        
     }
 }
