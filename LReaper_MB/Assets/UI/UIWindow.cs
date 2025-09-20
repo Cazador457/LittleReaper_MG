@@ -24,10 +24,14 @@ public class UIWindow : MonoBehaviour
     public UnityEvent OnFinishedHidingUI { get; private set; } = new UnityEvent();
     public bool IsShowing { get; private set; } = false;
     public string WindowID => windowID;
-    void Start()
+
+    private void Start()
     {
         Initialize();
     }
+    //Este es con Lambda Expresion
+    //El Lambda Expresion sirve cuando solo se llama a 1 methodo con 2/mas no se util
+    //void Start() => Initialize();
 
     public virtual void Initialize()
     {
@@ -35,27 +39,42 @@ public class UIWindow : MonoBehaviour
     }
     public virtual void Show(bool instant=false)
     {
-        //windowsCanvas.gameObject.SetActive(true);
+        if (IsShowing) return;
+        windowCanvas.gameObject.SetActive(true);
         if (instant)
         {
-            windowCanvasGroup.transform.DOScale(Vector3.one, 0.5f);
+            windowCanvasGroup.transform.DOScale(Vector3.one, 0f);
         }
         else
         {
-            windowCanvasGroup.transform.DOScale(Vector3.one, 0.5f);
+            windowCanvasGroup.transform.DOScale(Vector3.one, animationTime).SetEase(easeShow);
+            IsShowing = true;
+            
         }
     }
 
     public virtual void Hide(bool instant = false)
     {
-        //windowsCanvas.gameObject.SetActive(false);
+        windowCanvas.gameObject.SetActive(false);
         if (instant)
         {
-            windowCanvasGroup.transform.DOScale(Vector3.zero, 0.5f);
+            windowCanvasGroup.transform.DOScale(Vector3.zero, 0f);
         }
         else
         {
-            windowCanvasGroup.transform.DOScale(Vector3.zero, 0.5f);
+            //esta la forma con Lambda Expresion
+            windowCanvasGroup.transform.DOScale(Vector3.zero, animationTime).SetEase(easeHide).OnComplete(()=> 
+            {
+                windowCanvas.gameObject.SetActive(false);
+                IsShowing = false;
+            });
+            //Esta es la forma con metodo
+            //windowCanvasGroup.transform.DOScale(Vector3.zero, animationTime).SetEase(easeHide).OnComplete(DisableCanvas);
         }
     }
+    /*private void DisableCanvas()
+    {
+        windowCanvas.gameObject.SetActive(false);
+        IsShowing = false;
+    }*/
 }

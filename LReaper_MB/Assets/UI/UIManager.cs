@@ -1,8 +1,9 @@
 using System.Collections.Generic;
+using Dino.UtilityTools.Singleton;
 using NaughtyAttributes;
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+public class UIManager : Singleton<UIManager>
 {
     [SerializeField] private List<UIWindow> uiWindows = new List<UIWindow>();
 
