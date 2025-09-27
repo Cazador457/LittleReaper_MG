@@ -18,6 +18,15 @@ public class PauseUI : UIWindow
     public override void Initialize()
     {
         base.Initialize();
+        _play.onClick.AddListener(Play);
+        _sound.onClick.AddListener(Sound);
+        _exit.onClick.AddListener(Exit);
+    }
+    private void OnDestroy()
+    {
+        _play.onClick.RemoveListener(Play);
+        _sound.onClick.RemoveListener(Sound);
+        _exit.onClick.RemoveListener(Exit);
     }
     private void Play()
     {
@@ -30,7 +39,7 @@ public class PauseUI : UIWindow
     }
     private void Exit()
     {
-        SceneManager.ChangeScene();
+        ChangeSceneManager.Instance.MenuReturnScene();
 
     }
 

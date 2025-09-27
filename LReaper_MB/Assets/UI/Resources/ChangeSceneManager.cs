@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Dino.UtilityTools.Singleton;
 
-public class ChangeSceneManager
+public class ChangeSceneManager: Singleton<ChangeSceneManager>
 {
     public int nScene;
     public float delay = 2f;
@@ -14,6 +15,10 @@ public class ChangeSceneManager
     public void ChangeScene()
     {
         SceneManager.LoadScene(nScene);
+    }
+    public void MenuReturnScene(int IndexScene=0)
+    {
+        SceneManager.LoadScene(IndexScene);
     }
     public void Exit()
     {
