@@ -12,6 +12,9 @@ public class PauseUI : UIWindow
     [SerializeField] private Button _sound;
     [SerializeField] private Button _exit;
 
+    [Header("Resources")]
+    public ChangeSceneManager SceneManager;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -27,7 +30,7 @@ public class PauseUI : UIWindow
     }
     private void Exit()
     {
-        Hide();
+        SceneManager.ChangeScene();
 
     }
 
