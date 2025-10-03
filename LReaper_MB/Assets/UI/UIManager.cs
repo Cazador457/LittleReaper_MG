@@ -59,5 +59,5 @@ public static class WindowsUI
     public const string Inventory = "InventoryUI";
     public const string Pause = "PauseUI";
     public const string GameOver = "GameOverUI";
-    public const string Sound = "SoundUI";
+    public const string Sound = "AudioSettingsUI";
 }

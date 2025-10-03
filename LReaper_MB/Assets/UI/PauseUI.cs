@@ -35,7 +35,7 @@ public class PauseUI : UIWindow
     private void Sound()
     {
         Hide();
-        UIManager.Instance.ShowUI("SoundUI");
+        UIManager.Instance.ShowUI("AudioSettingsUI");
     }
     private void Exit()
     {
