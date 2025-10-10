@@ -4,7 +4,7 @@ using System;
 using UnityEngine.UI;
 using TMPro;
 
-public class HomeUI : UIWindow
+public class StartUI : UIWindow
 {
     [Header("Home Properties")]
     [SerializeField] private Button _play;

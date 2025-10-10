@@ -54,10 +54,12 @@ public class UIManager : Singleton<UIManager>
 
 public static class WindowsUI
 {
-    public const string Menu = "MenuUI";
+    public const string Sound = "AudioSettingsUI";
+    public const string Credits = "CreditsUI";
+    public const string Exit = "ExitUI";
     public const string Game = "GameUI";
     public const string Inventory = "InventoryUI";
+    public const string LoadGame = "LoadGameUI";
     public const string Pause = "PauseUI";
-    public const string GameOver = "GameOverUI";
-    public const string Sound = "AudioSettingsUI";
+    public const string Start = "StartUI";
 }
