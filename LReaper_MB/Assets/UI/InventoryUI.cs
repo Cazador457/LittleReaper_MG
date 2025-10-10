@@ -1,13 +1,27 @@
+using NaughtyAttributes;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryUI : UIWindow
 {
-    [SerializeField] private GameObject itemPrefab;
-    [SerializeField] private GameObject content;
+    [Header("Inventory UI")]
+    [BoxGroup("Inventory")][SerializeField] private GameObject itemPrefab;
+    [BoxGroup("Inventory")][SerializeField] private GameObject content;
 
-    private void SpawnItem()
+    public void CreateItems(List<ItemData> items)
     {
-        GameObject go=Instantiate(itemPrefab,content.transform);
+        foreach (var item in items)
+        {
+            SpawnItem(item);
+        }
+
+    }
+
+    private void SpawnItem(ItemData itemData)
+    {
+        GameObject go = Instantiate(itemPrefab, content.transform);
+        InventoryItem item = go.GetComponent<InventoryItem>();
+        item.SetInfo(itemData.sprite, itemData.text);
     }
 
 }

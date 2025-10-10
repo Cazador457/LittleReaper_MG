@@ -29,8 +29,8 @@ public class UIWindow : MonoBehaviour
     {
         Initialize();
     }
-    //Este es con Lambda Expresion
-    //El Lambda Expresion sirve cuando solo se llama a 1 methodo con 2/mas no se util
+    //This is the way with Lambda Expression
+    //The Lambda Expression is useful when only 1 method is called, with 2/more it is not used
     //void Start() => Initialize();
 
     public virtual void Initialize()
@@ -62,13 +62,13 @@ public class UIWindow : MonoBehaviour
         }
         else
         {
-            //esta la forma con Lambda Expresion
+            //This is the way with Lambda Expression
             windowCanvasGroup.transform.DOScale(Vector3.zero, animationTime).SetEase(easeHide).OnComplete(()=> 
             {
                 windowCanvas.gameObject.SetActive(false);
                 IsShowing = false;
             });
-            //Esta es la forma con metodo
+            //This is the methodical way
             //windowCanvasGroup.transform.DOScale(Vector3.zero, animationTime).SetEase(easeHide).OnComplete(DisableCanvas);
         }
     }
