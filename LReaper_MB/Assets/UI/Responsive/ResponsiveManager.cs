@@ -27,7 +27,9 @@ public class ResponsiveManager : Singleton<ResponsiveManager>
     }
     void Start()
     {
-
+        Debug.Log(CurrentScreenSize);
+        Debug.Log(CurrentDeviceType);
+        Debug.Log(CurrentOrientation);
     }
     void Update()
     {
