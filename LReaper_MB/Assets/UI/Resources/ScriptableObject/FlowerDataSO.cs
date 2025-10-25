@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Item", menuName = "Flower")]
+[CreateAssetMenu(fileName = "New Item", menuName = "FlowerData")]
 public class FlowerDataSO : ScriptableObject
 {
     [SerializeField] private string _id;
@@ -10,12 +10,12 @@ public class FlowerDataSO : ScriptableObject
     [SerializeField] private string _descriptation;
     [SerializeField] private FlowerType _flowerType;
     [SerializeField] private float _lifeTime;
-    public string id => _id;
-    public Sprite sprite => _sprite;
-    public string flowerName => _flowerName;
-    public string descriptation => _descriptation;
-    public FlowerType flowerType => _flowerType;
-    public float lifeTime => _lifeTime;
+    public string Id => _id;
+    public Sprite Sprite => _sprite;
+    public string FlowerName => _flowerName;
+    public string Descriptation => _descriptation;
+    public FlowerType FlowerType => _flowerType;
+    public float LifeTime => _lifeTime;
 
 }
 public enum FlowerType

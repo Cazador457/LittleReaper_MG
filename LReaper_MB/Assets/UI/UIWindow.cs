@@ -55,10 +55,14 @@ public class UIWindow : MonoBehaviour
 
     public virtual void Hide(bool instant = false)
     {
-        windowCanvas.gameObject.SetActive(false);
         if (instant)
         {
-            windowCanvasGroup.transform.DOScale(Vector3.zero, 0f);
+            windowCanvasGroup.transform.DOScale(Vector3.zero, 0f).SetEase(easeHide).OnComplete(() =>
+            {
+                windowCanvas.gameObject.SetActive(false);
+                IsShowing = false;
+            });
+            
         }
         else
         {
