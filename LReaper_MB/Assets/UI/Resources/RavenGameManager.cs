@@ -15,7 +15,7 @@ public class RavenGameManager : Singleton<RavenGameManager>
     [Button]
     private void CreateAllItems()
     {
-        InventoryUI inventoryUI = UIManager.Instance.GetUIWindow(WindowsUI.Inventory) as InventoryUI;
+        InventoryUI inventoryUI = UIManager.Instance.GetUIWindow(WindowsIDs.Inventory) as InventoryUI;
         if (inventoryUI == null) return;
         inventoryUI.CreateItems(items);
     }

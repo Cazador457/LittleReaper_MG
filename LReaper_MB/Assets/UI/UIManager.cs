@@ -14,6 +14,7 @@ public class UIManager : Singleton<UIManager>
             if (window.WindowID == windowUI)
             {
                 window.Show();
+                Debug.Log("UI");
                 return;
             }
         }
@@ -52,7 +53,7 @@ public class UIManager : Singleton<UIManager>
     }
 }
 
-public static class WindowsUI
+public static class WindowsIDs
 {
     public const string Sound = "AudioSettingsUI";
     public const string Credits = "CreditsUI";

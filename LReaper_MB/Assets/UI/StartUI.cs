@@ -1,14 +1,13 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-using System;
 using UnityEngine.UI;
-using TMPro;
 
 public class StartUI : UIWindow
 {
     [Header("Home Properties")]
+    [SerializeField] private Image _player;
     [SerializeField] private Button _play;
     [SerializeField] private Button _sound;
+    [SerializeField] private Button _credits;
     [SerializeField] private Button _exit;
 
     [Header("Resources")]
@@ -17,16 +16,35 @@ public class StartUI : UIWindow
     public override void Initialize()
     {
         base.Initialize();
+        _play.onClick.AddListener(Play);
+        _sound.onClick.AddListener(Sound);
+        _credits.onClick.AddListener(Credits);
+        _exit.onClick.AddListener(Exit);
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void OnDestroy()
     {
-        
+        _play.onClick.RemoveListener(Play);
+        _sound.onClick.RemoveListener(Sound);
+        _credits.onClick.AddListener(Credits);
+        _exit.onClick.RemoveListener(Exit);
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Play()
     {
-        
+        Hide();
+        ChangeSceneManager.Instance.ChangeScene(2);
+    }
+    private void Sound()
+    {
+        Hide();
+        UIManager.Instance.ShowUI(WindowsIDs.Sound);
+    }
+    private void Credits()
+    {
+        Hide();
+        UIManager.Instance.ShowUI(WindowsIDs.Credits);
+    }
+    private void Exit()
+    {
+        ChangeSceneManager.Instance.Exit();
     }
 }
