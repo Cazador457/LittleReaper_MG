@@ -1,16 +1,20 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-using System;
 using UnityEngine.UI;
-using TMPro;
 
 public class AudioSettingsUI : UIWindow
 {
     [Header("AudioSettings Properties")]
+    [SerializeField] private Button _exit;
 
-    [SerializeField] private Button _;
+
     public override void Initialize()
     {
         base.Initialize();
+        _exit.onClick.AddListener(Exit);
     }
+    private void OnDestroy()
+    {
+        _exit.onClick.RemoveListener(Exit);
+    }
+    private void Exit()=> Hide();
 }

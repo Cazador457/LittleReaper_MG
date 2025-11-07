@@ -10,12 +10,11 @@ public class Player : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true; // Para evitar girar por físicas
+        rb.freezeRotation = true;
     }
 
     private void Update()
     {
-        // Leer input del jugador
         input = new Vector2(
             Input.GetAxisRaw("Horizontal"),
             Input.GetAxisRaw("Vertical")
@@ -26,13 +25,10 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Movimiento en 3D X y Z
         Vector3 moveDir = new Vector3(input.x, 0, input.y).normalized;
 
         rb.linearVelocity = moveDir * speed + new Vector3(0, rb.linearVelocity.y, 0);
     }
-
-    // --- 8 DIRECCIONES ---
 
     private void DetectDirection()
     {
@@ -49,15 +45,26 @@ public class Player : MonoBehaviour
         if (input.x < 0 && input.y < 0) MoveBackwardLeft();
     }
 
-    // --- MÉTODOS POR DIRECCIÓN ---
+    public void MoveForward() { Debug.Log("Avanzando "); }
+    public void MoveBackward() { Debug.Log("Retrocediendo "); }
+    public void MoveLeft() { Debug.Log("Izquierda "); }
+    public void MoveRight() { Debug.Log("Derecha "); }
 
-    private void MoveForward() { Debug.Log("Avanzando "); }
-    private void MoveBackward() { Debug.Log("Retrocediendo "); }
-    private void MoveLeft() { Debug.Log("Izquierda "); }
-    private void MoveRight() { Debug.Log("Derecha "); }
+    public void MoveForwardRight() { Debug.Log("Diagonal "); }
+    public void MoveForwardLeft() { Debug.Log("Diagonal "); }
+    public void MoveBackwardRight() { Debug.Log("Diagonal "); }
+    public void MoveBackwardLeft() { Debug.Log("Diagonal "); }
 
-    private void MoveForwardRight() { Debug.Log("Diagonal "); }
-    private void MoveForwardLeft() { Debug.Log("Diagonal "); }
-    private void MoveBackwardRight() { Debug.Log("Diagonal "); }
-    private void MoveBackwardLeft() { Debug.Log("Diagonal "); }
+    public void Attack()
+    {
+
+    }
+    public void SpecialA()
+    {
+
+    }
+    public void SpecialB()
+    {
+
+    }
 }
