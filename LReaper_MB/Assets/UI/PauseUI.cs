@@ -28,8 +28,9 @@ public class PauseUI : UIWindow
     private void Play() => Hide();
     private void Sound()
     {
-        Hide();
         UIManager.Instance.ShowUI(WindowsIDs.Sound);
+        Hide();
+
     }
     private void Exit()=> ChangeSceneManager.Instance.ChangeScene(1);
 }

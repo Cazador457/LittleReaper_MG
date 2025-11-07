@@ -1087,7 +1087,7 @@ MonoBehaviour:
   windowID: StartUI
   windowCanvas: {fileID: 3980120087877059668}
   windowCanvasGroup: {fileID: 7387544661786395565}
-  hideOnStart: 0
+  hideOnStart: 1
   animationTime: 0.5
   easeShow: 26
   easeHide: 27
@@ -1794,10 +1794,10 @@ RectTransform:
   - {fileID: 1754276313890031316}
   m_Father: {fileID: 3780820873785757712}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: -2240, y: -980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &7387544661786395565
 CanvasGroup:
