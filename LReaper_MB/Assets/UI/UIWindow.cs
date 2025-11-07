@@ -37,6 +37,7 @@ public class UIWindow : MonoBehaviour
     {
         if (hideOnStart) Hide(instant:true);
     }
+    [Button]
     public virtual void Show(bool instant=false)
     {
         if (IsShowing) return;
@@ -52,7 +53,7 @@ public class UIWindow : MonoBehaviour
             
         }
     }
-
+    [Button]
     public virtual void Hide(bool instant = false)
     {
         if (instant)
