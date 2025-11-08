@@ -1343,6 +1343,10 @@ MonoBehaviour:
   animationTime: 0.5
   easeShow: 26
   easeHide: 27
+  _load1: {fileID: 8369729963729872250}
+  _load2: {fileID: 410901273107512549}
+  _load3: {fileID: 2624324651723556432}
+  _load4: {fileID: 7315316408386865305}
 --- !u!1 &3974189511692225450
 GameObject:
   m_ObjectHideFlags: 0

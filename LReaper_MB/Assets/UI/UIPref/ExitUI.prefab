@@ -964,6 +964,6 @@ MonoBehaviour:
   animationTime: 0.5
   easeShow: 26
   easeHide: 27
-  _exit: {fileID: 0}
-  _return: {fileID: 0}
+  _exit: {fileID: 2851179984494952559}
+  _return: {fileID: 84423125038686512}
   SceneManager: {fileID: 0}

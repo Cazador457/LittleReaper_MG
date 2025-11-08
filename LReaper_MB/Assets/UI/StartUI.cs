@@ -31,7 +31,7 @@ public class StartUI : UIWindow
     private void Play()
     {
         Hide();
-        ChangeSceneManager.Instance.ChangeScene(2);
+        ChangeSceneManager.Instance.ChangeScene(1);
     }
     private void Sound()
     {

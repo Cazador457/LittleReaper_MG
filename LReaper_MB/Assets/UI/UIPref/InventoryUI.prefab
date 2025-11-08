@@ -764,6 +764,8 @@ MonoBehaviour:
   easeHide: 27
   itemPrefab: {fileID: 3012554275618895103, guid: d08a5e450254f374f9428dc0ec662b7e, type: 3}
   content: {fileID: 7370495563123749232}
+  _pause: {fileID: 2836402402879830257}
+  _exit: {fileID: 6337809490273626826}
 --- !u!1 &5591381855671792125
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,7 +1655,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5624989406261266045}
   m_HandleRect: {fileID: 1787920720167926864}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

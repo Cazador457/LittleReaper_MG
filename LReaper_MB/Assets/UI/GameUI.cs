@@ -19,15 +19,8 @@ public class GameUI : UIWindow
     [SerializeField] private Button _k;
     [SerializeField] private Button _l;
 
-    public GameObject target;
+    public Player player;
 
-    private Player player;
-
-    public void Start()
-    {
-        target = GameObject.Find("Player");
-        player = target.GetComponent<Player>();
-    }
     public override void Initialize()
     {
         base.Initialize();
@@ -72,15 +65,15 @@ public class GameUI : UIWindow
         UIManager.Instance.ShowUI(WindowsIDs.Inventory);
         Hide();
     }
-    private void Attack() => player.Attack();
-    private void SpecialA() => player.SpecialA();
-    private void SpecialB() => player.SpecialB();
-    private void W() => player.MoveForward();
-    private void S() => player.MoveBackward();
-    private void A() => player.MoveLeft();
-    private void D() => player.MoveRight();
-    private void I() => player.MoveForwardRight();
-    private void J() => player.MoveForwardLeft();
-    private void K() => player.MoveBackwardLeft();
-    private void L() => player.MoveBackwardRight();
+    private void Attack() => Player.Instance.Attack();
+    private void SpecialA() => Player.Instance.SpecialA();
+    private void SpecialB() => Player.Instance.SpecialB();
+    private void W() => Player.Instance.MoveForward();
+    private void S() => Player.Instance.MoveBackward();
+    private void A() => Player.Instance.MoveLeft();
+    private void D() => Player.Instance.MoveR();
+    private void I() => Player.Instance.MoveForwardRight();
+    private void J() => Player.Instance.MoveForwardLeft();
+    private void K() => Player.Instance.MoveBackwardLeft();
+    private void L() => Player.Instance.MoveBackwardRight();
 }

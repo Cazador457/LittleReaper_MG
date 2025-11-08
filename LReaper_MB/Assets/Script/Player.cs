@@ -1,6 +1,7 @@
 using UnityEngine;
+using Dino.UtilityTools.Singleton;
 
-public class Player : MonoBehaviour
+public class Player : Singleton<Player>
 {
     public float speed = 6f;
 
@@ -19,7 +20,7 @@ public class Player : MonoBehaviour
             Input.GetAxisRaw("Horizontal"),
             Input.GetAxisRaw("Vertical")
         );
-
+        MoveR();
         DetectDirection();
     }
 
@@ -44,7 +45,11 @@ public class Player : MonoBehaviour
         if (input.x > 0 && input.y < 0) MoveBackwardRight();
         if (input.x < 0 && input.y < 0) MoveBackwardLeft();
     }
-
+    public void MoveR()
+    {
+        if (input == Vector2.zero) return;
+        if (input.x > 0 && input.y == 0) ;
+    }
     public void MoveForward() { Debug.Log("Avanzando "); }
     public void MoveBackward() { Debug.Log("Retrocediendo "); }
     public void MoveLeft() { Debug.Log("Izquierda "); }
