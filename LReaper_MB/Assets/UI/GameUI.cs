@@ -19,8 +19,15 @@ public class GameUI : UIWindow
     [SerializeField] private Button _k;
     [SerializeField] private Button _l;
 
-    public Player player;
+    public GameObject target;
 
+    private Player player;
+
+    public void Start()
+    {
+        target = GameObject.Find("Player");
+        player = target.GetComponent<Player>();
+    }
     public override void Initialize()
     {
         base.Initialize();

@@ -356,8 +356,9 @@ GameObject:
   - component: {fileID: 361390497}
   - component: {fileID: 361390496}
   - component: {fileID: 361390495}
+  - component: {fileID: 361390500}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -476,12 +477,26 @@ Transform:
   m_GameObject: {fileID: 361390494}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75.18087, y: 0.848, z: 69.38472}
+  m_LocalPosition: {x: 1, y: 0.848, z: 1.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1848715749}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &361390500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361390494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f444f6eb1415bef4eb4519fab0ec5527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player
+  speed: 6
 --- !u!1 &792720875
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,13 +765,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848715746}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.107361116, y: -0, z: -0, w: 0.99422014}
+  m_LocalPosition: {x: 0.100000024, y: 1.9519999, z: -7.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 361390499}
+  m_LocalEulerAnglesHint: {x: 12.326, y: 0, z: 0}
 --- !u!1001 &1219332507738829706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1154,6 +1169,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2708539353653624225, guid: f47b01fb947a31a4e98770df7a1fecd2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 361390500}
     - target: {fileID: 4609861033522369200, guid: f47b01fb947a31a4e98770df7a1fecd2, type: 3}
       propertyPath: m_Name
       value: GameUI
@@ -1488,7 +1507,6 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1848715749}
   - {fileID: 343520932}
   - {fileID: 7568613525320564611}
   - {fileID: 1290754962}
