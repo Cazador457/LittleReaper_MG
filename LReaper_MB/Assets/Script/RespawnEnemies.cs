@@ -21,8 +21,6 @@ public class RespawnEnemies : MonoBehaviour
         for (int i = 0; i < objectsToCheck.Length; i++)
         {
             GameObject obj = objectsToCheck[i];
-
-            // Si está desactivado y NO se está haciendo respawn…
             if (!obj.activeSelf && !isRespawning[i])
             {
                 StartCoroutine(RespawnObject(obj, i));
@@ -32,17 +30,11 @@ public class RespawnEnemies : MonoBehaviour
     private IEnumerator RespawnObject(GameObject obj, int index)
     {
         isRespawning[index] = true;
-
         yield return new WaitForSeconds(2f);
-
         int p = Random.Range(0, respawnPoints.Length);
-
         obj.transform.position = respawnPoints[p].position;
         obj.transform.rotation = respawnPoints[p].rotation;
-
         obj.SetActive(true);
-
         isRespawning[index] = false;
-
     }
 }
