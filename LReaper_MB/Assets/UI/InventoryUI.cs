@@ -28,8 +28,13 @@ public class InventoryUI : UIWindow
     private void Pause()
     {
         UIManager.Instance.ShowUI(WindowsIDs.Pause);
+        Hide();
     }
-    private void Exit() => Hide();
+    private void Exit()
+    {
+        UIManager.Instance.ShowUI(WindowsIDs.Game);
+        Hide();
+    }
 
     //
     public void CreateItems(List<ItemData> items)

@@ -25,12 +25,16 @@ public class PauseUI : UIWindow
         _sound.onClick.RemoveListener(Sound);
         _exit.onClick.RemoveListener(Exit);
     }
-    private void Play() => Hide();
+    private void Play()
+    {
+        UIManager.Instance.ShowUI(WindowsIDs.Game);
+        Hide();
+    }
     private void Sound()
     {
         UIManager.Instance.ShowUI(WindowsIDs.Sound);
         Hide();
 
     }
-    private void Exit()=> ChangeSceneManager.Instance.ChangeScene(1);
+    private void Exit()=> ChangeSceneManager.Instance.ChangeScene(0);
 }

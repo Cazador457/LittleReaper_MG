@@ -71,7 +71,7 @@ public class GameUI : UIWindow
     private void W() => Player.Instance.MoveForward();
     private void S() => Player.Instance.MoveBackward();
     private void A() => Player.Instance.MoveLeft();
-    private void D() => Player.Instance.MoveR();
+    private void D() => Player.Instance.MoveRight();
     private void I() => Player.Instance.MoveForwardRight();
     private void J() => Player.Instance.MoveForwardLeft();
     private void K() => Player.Instance.MoveBackwardLeft();

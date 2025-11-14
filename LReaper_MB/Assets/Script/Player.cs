@@ -20,7 +20,6 @@ public class Player : Singleton<Player>
             Input.GetAxisRaw("Horizontal"),
             Input.GetAxisRaw("Vertical")
         );
-        MoveR();
         DetectDirection();
     }
 
@@ -29,6 +28,7 @@ public class Player : Singleton<Player>
         Vector3 moveDir = new Vector3(input.x, 0, input.y).normalized;
 
         rb.linearVelocity = moveDir * speed + new Vector3(0, rb.linearVelocity.y, 0);
+
     }
 
     private void DetectDirection()
@@ -37,21 +37,30 @@ public class Player : Singleton<Player>
 
         if (input.x > 0 && input.y == 0) MoveRight();
         if (input.x < 0 && input.y == 0) MoveLeft();
-        if (input.x == 0 && input.y > 0) MoveForward();
-        if (input.x == 0 && input.y < 0) MoveBackward();
+        //if (input.x == 0 && input.y > 0) MoveForward();
+        //if (input.x == 0 && input.y < 0) MoveBackward();
 
         if (input.x > 0 && input.y > 0) MoveForwardRight();
         if (input.x < 0 && input.y > 0) MoveForwardLeft();
         if (input.x > 0 && input.y < 0) MoveBackwardRight();
         if (input.x < 0 && input.y < 0) MoveBackwardLeft();
     }
-    public void MoveR()
+    public void MoveForward()
     {
-        if (input == Vector2.zero) return;
-        if (input.x > 0 && input.y == 0) ;
+        input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+        Vector3 moveForward = new Vector3(input.x=0, 0, input.y=1).normalized;
+        rb.linearVelocity = moveForward * speed + new Vector3(0, rb.linearVelocity.y, 0);
+
     }
-    public void MoveForward() { Debug.Log("Avanzando "); }
-    public void MoveBackward() { Debug.Log("Retrocediendo "); }
+    //public void MoveForward() { Debug.Log("Avanzando "); }
+    public void MoveBackward()
+    {
+        input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+        Vector3 moveBackward = new Vector3(input.x = 0, 0, input.y = -1).normalized;
+        rb.linearVelocity = moveBackward * speed + new Vector3(0, rb.linearVelocity.y, 0);
+    }
     public void MoveLeft() { Debug.Log("Izquierda "); }
     public void MoveRight() { Debug.Log("Derecha "); }
 
