@@ -27,22 +27,26 @@ public class LoadGameUI : UIWindow
     }
     private void Load1()
     {
-        ChangeSceneManager.Instance.ChangeScene(2);
+        ChangeSceneManager.Instance.ChangeScene(3);
         Hide();
+        UIManager.Instance.ShowUI(WindowsIDs.Game);
     }
     private void Load2()
     {
-        ChangeSceneManager.Instance.ChangeScene(2);
+        ChangeSceneManager.Instance.ChangeScene(1);
         Hide();
+        UIManager.Instance.ShowUI(WindowsIDs.Game);
     }
     private void Load3()
     {
         ChangeSceneManager.Instance.ChangeScene(2);
         Hide();
+        UIManager.Instance.ShowUI(WindowsIDs.Game);
     }
     private void Load4()
     {
-        ChangeSceneManager.Instance.ChangeScene(2);
+        ChangeSceneManager.Instance.ChangeScene(4);
         Hide();
+        UIManager.Instance.ShowUI(WindowsIDs.Game);
     }
 }

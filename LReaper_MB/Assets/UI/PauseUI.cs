@@ -36,5 +36,17 @@ public class PauseUI : UIWindow
         Hide();
 
     }
-    private void Exit()=> ChangeSceneManager.Instance.ChangeScene(0);
+    private void Exit()
+    {
+        if (ChangeSceneManager.Instance.sceneIndex == 0)
+        {
+            Hide();
+            UIManager.Instance.ShowUI(WindowsIDs.Start);
+            Debug.Log("Escena Home");
+        }
+        else
+        {
+            ChangeSceneManager.Instance.ChangeScene(0);
+        }
+    }
 }

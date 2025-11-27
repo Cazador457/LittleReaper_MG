@@ -40,6 +40,7 @@ public class RavenGameManager : Singleton<RavenGameManager>
 
     void Start()
     {
+        Application.targetFrameRate = 60;
         respawnPosition = GameObject.Find("Respawn");
         targetT = respawnPosition.GetComponent<Transform>();
     }
