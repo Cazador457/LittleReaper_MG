@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UIElements;
 
 public class EnemyPusuit : Enemy
 {
@@ -32,10 +31,10 @@ public class EnemyPusuit : Enemy
         }
         else if (distance < stopRange)
         {
-            ataak();
+            Ataak();
         }
     }
-    private void ataak()
+    private void Ataak()
     {
         Debug.Log("Atacando");
     }

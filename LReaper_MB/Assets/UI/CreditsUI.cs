@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,5 +15,18 @@ public class CreditsUI : UIWindow
     {
         _exit.onClick.RemoveListener(Exit);
     }
-    private void Exit() =>Hide();
+    private void Exit()
+    {
+        if (ChangeSceneManager.Instance.sceneIndex == 0)
+        {
+            Hide();
+            UIManager.Instance.ShowUI(WindowsIDs.Start);
+        }
+        else if (ChangeSceneManager.Instance.sceneIndex >= 1)
+        {
+            Hide();
+            UIManager.Instance.ShowUI(WindowsIDs.Game);
+        }
+    }
+
 }

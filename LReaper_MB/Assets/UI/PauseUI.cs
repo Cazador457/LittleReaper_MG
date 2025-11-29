@@ -38,15 +38,21 @@ public class PauseUI : UIWindow
     }
     private void Exit()
     {
-        if (ChangeSceneManager.Instance.sceneIndex == 0)
+        if (ChangeSceneManager.Instance.sceneIndex == 1)
         {
             Hide();
             UIManager.Instance.ShowUI(WindowsIDs.Start);
             Debug.Log("Escena Home");
-        }
-        else
-        {
             ChangeSceneManager.Instance.ChangeScene(0);
+            ChangeSceneManager.Instance.sceneIndex = 0;
+        }
+        if(ChangeSceneManager.Instance.sceneIndex >= 2)
+        {
+            Hide();
+            UIManager.Instance.ShowUI(WindowsIDs.Game);
+            Debug.Log("Escena Home");
+            ChangeSceneManager.Instance.ChangeScene(1);
+            ChangeSceneManager.Instance.sceneIndex = 1;
         }
     }
 }

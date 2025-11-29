@@ -90,11 +90,11 @@ public class PlayerController : Singleton<PlayerController>
         transform.rotation = Quaternion.Euler(0f, smoothAngle, 0f);
     }
 
-    public void attack1()
+    public void Attack1()
     {
 
     }
-    public void attack2()
+    public void Attack2()
     {
 
     }

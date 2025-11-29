@@ -4,7 +4,7 @@ using Dino.UtilityTools.Singleton;
 
 public class ChangeSceneManager: Singleton<ChangeSceneManager>
 {
-    public int sceneIndex;
+    public int sceneIndex=0;
 
     public void Start()
     {
@@ -14,6 +14,10 @@ public class ChangeSceneManager: Singleton<ChangeSceneManager>
     {
         int currentScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentScene + 1);
+    }
+    public void UIout()
+    {
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
     public void ChangeScene(int IndexScene = 0)
     {

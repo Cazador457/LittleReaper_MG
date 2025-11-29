@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public float respawnDelay = 3f; // Tiempo que tarda en reaparecer
     public Transform[] respawnPoints; //Puntos de respawn del propio enemigo
 
-    public event Action onDeath;
+    public event Action OnDeath;
 
     public void TakeDamage(float damage)
     {
@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
-        onDeath?.Invoke();
+        OnDeath?.Invoke();
 
         // Desactiva el enemigo (puede mostrar animación antes)
         gameObject.SetActive(false);

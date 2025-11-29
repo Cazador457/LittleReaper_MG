@@ -31,7 +31,8 @@ public class StartUI : UIWindow
     private void Play()
     {
         Hide();
-        ChangeSceneManager.Instance.ChangeScene(0);
+        ChangeSceneManager.Instance.ChangeScene(1);
+        ChangeSceneManager.Instance.sceneIndex = 1;
         UIManager.Instance.ShowUI(WindowsIDs.Game);
     }
     private void Sound()
